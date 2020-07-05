@@ -1,0 +1,12 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweets/tweet", locals: { tweet: tweet } %> <%# 下の記述を部分テンプレートしたもの。処理は一緒のことをやっている %>
+    <%# <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+      <%# <%= simple_format(tweet.text) %> 
+      <%# <span class="name"><%= tweet.name</span>  nameの入力をnicknameで代用することにしたのでいらない %>
+    <%# </div> %> 
+  <% end %>
+    <%= paginate(@tweets) %>
+</div>
