@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_07_07_024159) do
     t.integer "expiration_year", null: false
     t.integer "expiration_month", null: false
     t.integer "security_code", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
