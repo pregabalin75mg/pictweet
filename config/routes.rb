@@ -10,6 +10,15 @@ Rails.application.routes.draw do
     #   get 'search'
     # end
   end
+  resources :creditcards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end    
+
+
   # 「tweets」というパスをクライアントがクリックすると 「tweets」コントローラーが「index」という処理を行う。
   resources :users, only: :show   # /users/:idのパスでアクセスした際にusers_controller.rbのshowアクションを呼ぶルーティングが設定
 end
